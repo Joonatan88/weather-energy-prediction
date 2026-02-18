@@ -23,7 +23,7 @@
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions._
 
-// Path to parquet dataset stored in Azure Data Lake !!! Link doesn't work ATM !!!
+// Path to parquet dataset stored in Azure Data Lake !!! Link doesn't work anymore !!!
 val MlDataPath = "abfss://shared@tunics320f2024gen2.dfs.core.windows.net/assignment/energy/procem_13m.parquet/procem.parquet"
 
 // Load parquet dataset
