@@ -119,7 +119,12 @@ Cyclic tolerance was included because temporal classes (month/hour) wrap around.
   
 ---
 
-## 👤 Olli Könönen
+## 👤 Author: Olli Könönen
 
 Master’s student in Data Science  
 Interested in energy systems, forecasting, and applied machine learning.
+
+## Usage of AI
+- AI was used for parts of the project
+- Usage: BugFixes, Scala and spark syntax, theory explanation
+- Model: GPT-5 mini
