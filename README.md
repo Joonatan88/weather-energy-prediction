@@ -63,7 +63,8 @@ Six classification cases were tested:
 4. Using weather features only  
 5. Using power features only  
 6. Using all features combined
-   
+
+### Predicting day of the week
 7. Naive Bayes classifier was trained and evaluated against Random Forest model using weather featrues to predict day of the week.
 
 ---
