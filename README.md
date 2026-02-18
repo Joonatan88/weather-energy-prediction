@@ -93,11 +93,13 @@ Using a pipeline ensured that all transformations applied to the training data w
 
 Models were assessed using standard accuracy along with custom cyclic metrics to account for temporal wrap-around:
 
-Within ±1 unit (e.g., hour 23 vs 0)
+- Within ±1 unit (e.g., hour 23 vs 0)
 
-Within ±2 units
+- Within ±2 units
 
-The average predicted probability for correct class was also computed to quantify model confidence. These metrics provide a comprehensive view of model performance across temporal prediction tasks.
+- Average prediction accuracy
+
+
 ---
 ## 📊 Key Results and Insights
 
