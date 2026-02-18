@@ -66,8 +66,6 @@ Six classification cases were tested:
 5. Using power features only  
 6. Using all features combined  
 
----
-
 ### Task 2 – Naive Bayes Comparison
 
 Naive Bayes classifier was trained and evaluated against Random Forest using weather features for day-of-week prediction. The comparison illustrates differences between a probabilistic linear model and a nonlinear ensemble method.
@@ -77,23 +75,23 @@ Naive Bayes classifier was trained and evaluated against Random Forest using wea
 
 The modeling workflow was structured as a pipeline to ensure consistent and reproducible processing for both Random Forest and Naive Bayes models.
 
-Data Preparation
+### Data Preparation
 
 The raw dataset was first cleaned by removing missing or invalid values. UNIX timestamps were converted into month, hour, and weekday features, providing temporal targets for prediction. Input features were vectorized using Spark ML’s VectorAssembler, and target labels were encoded with StringIndexer. The data was then split into 80% training and 20% testing sets, forming the foundation for model training and evaluation.
 
-Model Pipeline
+### Model Pipeline
 
 Both Random Forest and Naive Bayes models were trained using a Spark ML Pipeline, which integrates all preprocessing and modeling steps into a single workflow. The pipeline included:
 
-Feature assembly – combining selected input features into a single feature vector.
+1. Feature assembly – combining selected input features into a single feature vector.
 
-Label encoding – converting categorical target variables into numeric indices.
+2. Label encoding – converting categorical target variables into numeric indices.
 
-Model training – fitting either a Random Forest or Naive Bayes classifier on the training set.
+3. Model training – fitting either a Random Forest or Naive Bayes classifier on the training set.
 
 Using a pipeline ensured that all transformations applied to the training data were consistently applied to the test data, enabling robust evaluation and direct comparison between models.
 
-Evaluation Metrics
+### Evaluation Metrics
 
 Models were assessed using standard accuracy along with custom cyclic metrics to account for temporal wrap-around:
 
