@@ -1,5 +1,5 @@
 # 🌦️ Prediction Modeling Using Weather and Energy Data
-- Machine learning project extended exploring how weather conditions, power consumption, and electricity price can explain the time of day and month of the year.
+- Machine learning project exploring how weather conditions, power consumption, and electricity price can explain the time of day and month of the year.
 - Project is extended from Tampere University courses voluntary work: COMP.CS.320 Data-Intensive Programming
 - Aim of the project was to learn Scala with Sparks Machine Learning libraries.
 ---
