@@ -50,7 +50,7 @@ Time series data collected in the ProCem research (https://www.senecc.fi/project
 
 ## 🧠 Modeling Tasks
 
-### 🔹 Task 1 – Random Forest Experiments
+### Task 1 – Random Forest Experiments
 
 Six classification cases were tested:
 
@@ -68,43 +68,46 @@ Six classification cases were tested:
 
 ---
 
-### 🔹 Task 2 – Model Comparison
+### Task 2 – Naive Bayes Comparison
 
-Naive Bayes classifier was implemented and compared against Random Forest using weather features.
-
-The objective was to evaluate:
-
-- Linear probabilistic assumptions (Naive Bayes)
-- Nonlinear ensemble learning (Random Forest)
-
+Naive Bayes classifier was trained and evaluated against Random Forest using weather features for day-of-week prediction. The comparison illustrates differences between a probabilistic linear model and a nonlinear ensemble method.
 ---
 
 ## ⚙️ Methodology
 
-### Data Preparation
-- Removed missing values
-- Extracted month and hour from UNIX timestamp
-- Feature vectorization using Spark ML `VectorAssembler`
-- Label encoding using `StringIndexer`
-- 80/20 train-test split
+The modeling workflow was structured as a pipeline to ensure consistent and reproducible processing for both Random Forest and Naive Bayes models.
 
-### Evaluation Metrics
-- Accuracy
-- Custom cyclic tolerance metrics:
-  - Within ±1 unit (e.g., hour 23 vs 0)
-  - Within ±2 units
-- Average predicted probability of correct class
+Data Preparation
 
-Cyclic tolerance was included because temporal classes (month/hour) wrap around.
+The raw dataset was first cleaned by removing missing or invalid values. UNIX timestamps were converted into month, hour, and weekday features, providing temporal targets for prediction. Input features were vectorized using Spark ML’s VectorAssembler, and target labels were encoded with StringIndexer. The data was then split into 80% training and 20% testing sets, forming the foundation for model training and evaluation.
 
----
+Model Pipeline
 
-## 📊 Key Insights
+Both Random Forest and Naive Bayes models were trained using a Spark ML Pipeline, which integrates all preprocessing and modeling steps into a single workflow. The pipeline included:
 
-- Power consumption features strongly encoded **hour-of-day patterns**.
-- Weather variables carried stronger **seasonal (monthly) signals**.
-- Combining weather, power, and price improved performance.
-- Random Forest consistently outperformed Naive Bayes due to nonlinear feature interactions.
+Feature assembly – combining selected input features into a single feature vector.
+
+Label encoding – converting categorical target variables into numeric indices.
+
+Model training – fitting either a Random Forest or Naive Bayes classifier on the training set.
+
+Using a pipeline ensured that all transformations applied to the training data were consistently applied to the test data, enabling robust evaluation and direct comparison between models.
+
+Evaluation Metrics
+
+Models were assessed using standard accuracy along with custom cyclic metrics to account for temporal wrap-around:
+
+Within ±1 unit (e.g., hour 23 vs 0)
+
+Within ±2 units
+
+The average predicted probability for correct class was also computed to quantify model confidence. These metrics provide a comprehensive view of model performance across temporal prediction tasks.
+
+## 📊 Key Results and Insights
+
+- Random Forest outperformed Naive Bayes for predicting the month and hour of the day due to its ability to model nonlinear relationships and feature interactions.
+
+- Naive Bayes performed slightly better for predicting the day of the week, likely because day-of-week patterns are more regular and less dependent on complex feature interactions.
 
 ---
 
