@@ -50,8 +50,6 @@ Time series data collected in the ProCem research (https://www.senecc.fi/project
 
 ## 🧠 Modeling Tasks
 
-### Task 1 – Random Forest Experiments
-
 Six classification cases were tested:
 
 ### Predicting Month (12 classes)
@@ -64,11 +62,10 @@ Six classification cases were tested:
 
 4. Using weather features only  
 5. Using power features only  
-6. Using all features combined  
+6. Using all features combined
+   
+7. Naive Bayes classifier was trained and evaluated against Random Forest model using weather featrues to predict day of the week.
 
-### Task 2 – Naive Bayes Comparison
-
-Naive Bayes classifier was trained and evaluated against Random Forest using weather features for day-of-week prediction. The comparison illustrates differences between a probabilistic linear model and a nonlinear ensemble method.
 ---
 
 ## ⚙️ Methodology
@@ -100,7 +97,7 @@ Within ±1 unit (e.g., hour 23 vs 0)
 Within ±2 units
 
 The average predicted probability for correct class was also computed to quantify model confidence. These metrics provide a comprehensive view of model performance across temporal prediction tasks.
-
+---
 ## 📊 Key Results and Insights
 
 - Random Forest outperformed Naive Bayes for predicting the month and hour of the day due to its ability to model nonlinear relationships and feature interactions.
