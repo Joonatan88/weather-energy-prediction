@@ -116,10 +116,10 @@ Cyclic tolerance was included because temporal classes (month/hour) wrap around.
 - RandomForestClassifier
 - NaiveBayes
 - MulticlassClassificationEvaluator
-- 
+  
 ---
 
 ## 👤 Olli Könönen
 
-Master’s student in Data Science & Information Management  
+Master’s student in Data Science  
 Interested in energy systems, forecasting, and applied machine learning.
